@@ -26,6 +26,7 @@ package algorithm.sum22;
  */
 public class Solution {
     public static int longestOnes(int[] A, int K) {
+        //把最长子串的问题转换为,从left到right中最多包含k个零的问题
         int max = 0, left = 1, right = 0;
         int[] p = new int[A.length + 1];
         for (int i = 1; i <= A.length; i++) {
