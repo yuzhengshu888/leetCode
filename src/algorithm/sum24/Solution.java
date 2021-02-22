@@ -2,12 +2,13 @@ package algorithm.sum24;
 
 /**
  * 给你一个 m x n 的矩阵 matrix 。如果这个矩阵是托普利茨矩阵，返回 true ；否则，返回 false 。
- *
+ * <p>
  * 如果矩阵上每一条由左上到右下的对角线上的元素都相同，那么这个矩阵是 托普利茨矩阵 。
- *
+ * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/toeplitz-matrix
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *
  * @description:
  * @Author: yuzhengshu
  * @Date: 2021/2/22 11:36
@@ -27,6 +28,20 @@ public class Solution {
             }
             if (!str1.toString().equals(str2.toString())) {
                 return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 改进方法
+     */
+    public boolean isToeplitzMatrix1(int[][] matrix) {
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[0].length; j++) {
+                if (matrix[i][j] != matrix[i - 1][j - 1]) {
+                    return false;
+                }
             }
         }
         return true;
