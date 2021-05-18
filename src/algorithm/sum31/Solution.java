@@ -1,6 +1,6 @@
 package algorithm.sum31;
 
-import algorithm.sum15.TreeNode;
+import common.TreeNode;
 
 import java.util.*;
 

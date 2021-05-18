@@ -1,6 +1,6 @@
 package algorithm.sum27;
 
-import algorithm.sum15.TreeNode;
+import common.TreeNode;
 
 /**
  * @description: 938. 二叉搜索树的范围和

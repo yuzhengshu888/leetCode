@@ -1,4 +1,4 @@
-package algorithm.sum15;
+package common;
 
 import java.util.LinkedList;
 import java.util.Queue;
