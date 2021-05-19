@@ -1,4 +1,4 @@
-package algorithm.sum4;
+package common;
 
 /**
  * @description:
@@ -6,10 +6,10 @@ package algorithm.sum4;
  * @Date: 2020/9/15 19:12
  */
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 
