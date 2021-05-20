@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.*;
 
 /**
- * @description: 前K个高频单词
+ * @description: 692.前K个高频单词
  * @Author: yuzhengshu
  * @Date: 2021年5月20日 11:23
  */
