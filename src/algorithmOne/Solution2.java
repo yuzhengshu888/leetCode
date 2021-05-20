@@ -14,7 +14,7 @@ public class Solution2 {
         if (words.length == 0) {
             return new ArrayList<>();
         }
-        HashMap<String, Integer> map = new HashMap<>(k);
+        HashMap<String, Integer> map = new HashMap<>(words.length);
         for (int i = 0; i < words.length; i++) {
             map.merge(words[i], 1, Integer::sum);
         }
