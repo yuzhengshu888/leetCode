@@ -5,7 +5,7 @@ package dp;
  * @Author: yuzhengshu
  * @Date: 2021年5月24日 15:50
  */
-public class maxUncrossedLines {
+public class MaxUncrossedLines {
     public static int maxUncrossedLines(int[] nums1, int[] nums2) {
         int[][] dp = new int[nums1.length + 1][nums2.length + 1];
         for (int i = 1; i <= nums1.length; i++) {
