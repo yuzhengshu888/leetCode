@@ -21,6 +21,7 @@ public class Solution14 {
             int favoriteType = queries[i][0];
             int favoriteDay = queries[i][1];
             int dailyCap = queries[i][2];
+            //这里加1是因为 favoriteDay的时候还要吃一颗糖
             answer[i] = favoriteDay + 1 <= minEat[favoriteType + 1] && minEat[favoriteType] / dailyCap <= favoriteDay;
         }
         return answer;
