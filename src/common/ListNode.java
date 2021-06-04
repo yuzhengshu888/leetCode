@@ -1,5 +1,7 @@
 package common;
 
+import java.util.HashMap;
+
 /**
  * @description:
  * @Author: yuzhengshu
@@ -8,6 +10,20 @@ package common;
 public class ListNode {
     public int val;
     public ListNode next;
+
+    public static ListNode createListNode(int[] s) {
+        if (s.length == 0) {
+            return null;
+        }
+        ListNode root = new ListNode(s[0]);
+        ListNode other = root;
+        for (int i = 1; i < s.length; i++) {
+            ListNode temp = new ListNode(s[i]);
+            other.setNext(temp);
+            other = temp;
+        }
+        return root;
+    }
 
     public ListNode(int x) {
         val = x;
