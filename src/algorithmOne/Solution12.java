@@ -60,11 +60,15 @@ public class Solution12 {
     public int numSubmatrixSumTarget2(int[][] matrix, int target) {
         int ans = 0;
         int m = matrix.length, n = matrix[0].length;
-        for (int i = 0; i < m; ++i) { // 枚举上边界
+        // 枚举上边界
+        for (int i = 0; i < m; ++i) {
             int[] sum = new int[n];
-            for (int j = i; j < m; ++j) { // 枚举下边界
+            // 枚举下边界
+            for (int j = i; j < m; ++j) {
+                //从二维问题转换为一维问题
+                //求 数组的连续子数组的和为target (523. 连续的子数组和)
                 for (int c = 0; c < n; ++c) {
-                    sum[c] += matrix[j][c]; // 更新每列的元素和
+                    sum[c] += matrix[j][c];
                 }
                 ans += subarraySum(sum, target);
             }
