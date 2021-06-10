@@ -9,11 +9,18 @@ public class Solution5 {
     public static int change(int amount, int[] coins) {
         int[] dp = new int[amount + 1];
         dp[0] = 1;
+        //求组合数
         for (int coin : coins) {
             for (int i = coin; i <= amount; i++) {
                 dp[i] += dp[i - coin];
             }
         }
+        //求排列数
+//        for (int i = 0; i <= amount; i++) {
+//            for (int coin : coins) {
+//                dp[i] += dp[i - coin];
+//            }
+//        }
         return dp[amount];
     }
 
