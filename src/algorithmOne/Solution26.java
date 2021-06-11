@@ -84,6 +84,7 @@ public class Solution26 {
     }
 
     // 判断是否能表示为 4^k*(8m+7)
+    //如果n满足 = 4^K * (8m+7)
     public boolean checkAnswer4(int x) {
         while (x % 4 == 0) {
             x /= 4;
