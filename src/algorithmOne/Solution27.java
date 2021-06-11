@@ -1,5 +1,7 @@
 package algorithmOne;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -9,22 +11,23 @@ import java.util.Stack;
  */
 public class Solution27 {
     public static boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        //Stack的数据结构已经过时,建议使用Deque
+        Deque<Character> stack = new LinkedList<>();
         char[] chars = s.toCharArray();
         for (char aChar : chars) {
             switch (aChar) {
                 case ']':
-                    if (stack.empty() || stack.pop() != '[') {
+                    if (stack.isEmpty() || stack.pop() != '[') {
                         return false;
                     }
                     break;
                 case ')':
-                    if (stack.empty() || stack.pop() != '(') {
+                    if (stack.isEmpty() || stack.pop() != '(') {
                         return false;
                     }
                     break;
                 case '}':
-                    if (stack.empty() || stack.pop() != '{') {
+                    if (stack.isEmpty() || stack.pop() != '{') {
                         return false;
                     }
                     break;
@@ -32,7 +35,7 @@ public class Solution27 {
                     stack.push(aChar);
             }
         }
-        return stack.empty();
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
