@@ -71,6 +71,14 @@ public class Solution1 {
                 sb.append(i + 1);
             }
         }
+        //相当于
+//        for (int i = 8, j = target; i >= 0; i--) {
+//            for (int c = cost[i]; j - c >= 0; j = j - c) {
+//                if (dp[j] == dp[j - c] + 1) {
+//                    sb.append(i + 1);
+//                }
+//            }
+//        }
         return sb.toString();
     }
 
