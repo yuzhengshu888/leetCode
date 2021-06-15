@@ -31,6 +31,22 @@ public class Solution5 {
         return idxMid;
     }
 
+    public int peakIndexInMountainArray2(int[] arr) {
+        int n = arr.length;
+        int left = 1, right = n - 2, ans = 0;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] > arr[mid + 1]) {
+                ans = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+
     public static void main(String[] args) {
         int[] arr = {40, 48, 61, 75, 100, 99, 98, 39, 30, 10};
         System.out.println(peakIndexInMountainArray(arr));
