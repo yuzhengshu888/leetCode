@@ -3,8 +3,6 @@ package design;
 import common.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -33,23 +31,7 @@ public class BSTIterator {
     }
 
 
-    /**
-     * 中序遍历,左,中,右
-     */
-    private List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        Deque<TreeNode> stk = new LinkedList<>();
-        while (root != null || !stk.isEmpty()) {
-            while (root != null) {
-                stk.push(root);
-                root = root.left;
-            }
-            root = stk.pop();
-            res.add(root.val);
-            root = root.right;
-        }
-        return res;
-    }
+
 
     /**
      * 可以优化,每次next的时候再去迭代树,可以使用栈的数据结构
@@ -63,6 +45,8 @@ public class BSTIterator {
     public boolean hasNext() {
         return index < list.size();
     }
+
+
 
     public static void main(String[] args) {
         Integer[] nums = {7, 3, 15, null, null, 9, 20};
