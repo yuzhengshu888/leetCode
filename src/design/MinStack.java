@@ -9,7 +9,7 @@ import java.util.List;
  * @Date: 2021年6月22日 14:22
  */
 public class MinStack {
-    class Temp {
+    static class Temp {
         int val;
         int minIndex;
     }
