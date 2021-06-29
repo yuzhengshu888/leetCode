@@ -9,6 +9,7 @@ public class Solution3 {
     public String convertToTitle(int columnNumber) {
         StringBuffer sb = new StringBuffer();
         while (columnNumber != 0) {
+            //这里要把 1归到0 ,不然 27不好处理
             columnNumber--;
             sb.append((char) (columnNumber % 26 + 'A'));
             columnNumber /= 26;
@@ -17,6 +18,6 @@ public class Solution3 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution3().convertToTitle(2147483647));
+        System.out.println(new Solution3().convertToTitle(27));
     }
 }
