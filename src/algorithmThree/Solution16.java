@@ -1,53 +1,61 @@
 package algorithmThree;
 
-/**
- * @description: 704. 二分查找
- * @Author: yuzhengshu
- * @Date: 2021年7月2日 16:03
- */
+
+import java.io.IOException;
+import java.util.*;
+
+//189. 旋转数组
 public class Solution16 {
-    public int search(int[] nums, int target) {
-        return dfs(nums, target, 0, nums.length - 1);
+    //方法1,模拟
+
+    //方法2.计算出现的位置,交换 i和 i+K的值
+    public void rotate(int[] nums, int k) {
+        int i = k % nums.length;
+
+
     }
 
-    public int dfs(int[] nums, int target, int left, int right) {
-        int mid = (left + right) / 2;
-        if (nums[mid] == target) {
-            return mid;
-        }
-        if (left == right) {
-            return -1;
-        }
-        if (nums[mid] > target) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
-        if (left > right) {
-            return -1;
-        }
-        return dfs(nums, target, left, right);
+    //创建一个临时数组
+    public static void rotate2(int[] nums, int k) {
+        int length = nums.length;
+        k = k % length;
+        int[] res = new int[k];
+        System.arraycopy(nums, length - k, res, 0, k);
+        System.arraycopy(nums, 0, nums, k, nums.length - k);
+        //System.out.println(Arrays.toString(nums));
+        System.arraycopy(res, 0, nums, 0, res.length);
     }
 
-    public int search1(int[] nums, int target) {
-        int pivot, left = 0, right = nums.length - 1;
-        while (left <= right) {
-            pivot = left + (right - left) / 2;
-            if (nums[pivot] == target) {
-                return pivot;
-            }
-            if (target < nums[pivot]) {
-                right = pivot - 1;
-            } else {
-                left = pivot + 1;
-            }
-        }
-        return -1;
+    //翻转
+    // 1 2 3 4 5
+    //翻转后 5 4 3 2 1
+    //如果k= 2
+    //切分为两部分
+    // 5 4  |  3 2 1
+    //再翻转
+    //4 5 | 1 2 3
+    public static void rotate3(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
     }
+
+    public static void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start += 1;
+            end -= 1;
+        }
+    }
+
 
     public static void main(String[] args) {
-        int target = 0;
-        int[] nums = {2};
-        System.out.println(new Solution16().search(nums, target));
+        int k = 1;
+        int[] nums = {-1, -100, 3, 99};
+        rotate2(nums, k);
+        System.out.println(Arrays.toString(nums));
     }
 }
