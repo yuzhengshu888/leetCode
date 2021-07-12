@@ -1,8 +1,12 @@
 package algorithmThree;
 
 import java.util.HashMap;
-import java.util.TreeMap;
 
+/**
+ * @Description: 274. H 指数 I
+ * @Author: yuzhengshu
+ * @Date: 2021年7月12日
+ */
 public class Solution26 {
     public static int hIndex(int[] citations) {
         HashMap<Integer, Integer> map = new HashMap<>();
