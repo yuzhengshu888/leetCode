@@ -11,19 +11,20 @@ public class Solution2 {
         ListNode root = new ListNode(head.val);
         ListNode another = head.next;
         while (another != null) {
-            ListNode temp = another.next;
-            //root = new ListNode(another.val, root);
+
             ListNode temp1 = new ListNode(another.val);
             temp1.next = root;
             root = temp1;
-            another = temp;
+
+            another = another.next;;
         }
         return root;
     }
 
     public static void main(String[] args) {
         ListNode listNode = ListNode.createListNode(new int[]{1, 2, 3, 4});
-        System.out.println(ReverseList(listNode));
+        ListNode listNode1 = ReverseList(listNode);
+        System.out.println(listNode1);
         System.out.println(1);
     }
 }
