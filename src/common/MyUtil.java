@@ -5,6 +5,25 @@ public class MyUtil {
         return str.replace("]", "}").replace("[", "{");
     }
 
+    public static int[] castToNums1(String str) {
+        String[] split = str.replace("[", "").replace("]", "").split(",");
+        int[] res = new int[split.length];
+        for (int i = 0; i < split.length; i++) {
+            res[i] = Integer.parseInt(split[i]);
+        }
+        return res;
+    }
+
+    public static int[][] castToNums2(String str) {
+        String[] split = str.split("],\\[");
+        int[][] res = new int[split.length][split[0].length()];
+        for (int i = 0; i < split.length; i++) {
+            int[] ints = castToNums1(split[i]);
+            res[i] = ints;
+        }
+        return res;
+    }
+
     public static int fastPower(int n, int count) {
         if (count <= 0) {
             return 1;
