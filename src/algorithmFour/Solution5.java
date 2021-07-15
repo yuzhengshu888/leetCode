@@ -20,6 +20,9 @@ public class Solution5 {
     }
 
     public static void main(String[] args) {
-        System.out.println(butToy(15, 10));
+//        System.out.println(butToy(15, 10));
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(null,1);
+        System.out.println(1);
     }
 }
