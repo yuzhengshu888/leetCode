@@ -1,5 +1,7 @@
 package common;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -23,6 +25,16 @@ public class ListNode {
             other = temp;
         }
         return root;
+    }
+
+    public Integer[] toArray() {
+        ListNode listNode = this;
+        ArrayList<Integer> list = new ArrayList<>();
+        while (listNode != null) {
+            list.add(listNode.val);
+            listNode = listNode.next;
+        }
+        return list.toArray(new Integer[0]);
     }
 
     public ListNode(int x) {
