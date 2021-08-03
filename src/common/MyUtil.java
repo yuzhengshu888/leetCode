@@ -15,7 +15,7 @@ public class MyUtil {
     }
 
     public static int[][] castToNums2(String str) {
-        String[] split = str.split("],\\[");
+        String[] split = str.replace("\n", "").replace(" ", "").split("],\\[");
         int[][] res = new int[split.length][split[0].length()];
         for (int i = 0; i < split.length; i++) {
             int[] ints = castToNums1(split[i]);
